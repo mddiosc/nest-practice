@@ -56,4 +56,8 @@ export class BrandsService {
     this.brands.splice(index, 1);
     return brand;
   }
+
+  fillBrandsWithSeedData(brands: Brand[]) {
+    this.brands = brands;
+  }
 }

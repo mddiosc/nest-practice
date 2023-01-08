@@ -6,21 +6,21 @@ import { Car } from './interfaces/car.interface';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: uuid(),
-      brand: 'Toyota',
-      model: 'Corolla',
-    },
-    {
-      id: uuid(),
-      brand: 'Honda',
-      model: 'Civic',
-    },
-    {
-      id: uuid(),
-      brand: 'Jeep',
-      model: 'CHerokee',
-    },
+    // {
+    //   id: uuid(),
+    //   brand: 'Toyota',
+    //   model: 'Corolla',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'Honda',
+    //   model: 'Civic',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'Jeep',
+    //   model: 'CHerokee',
+    // },
   ];
 
   findAll() {
@@ -55,5 +55,9 @@ export class CarsService {
       throw new NotFoundException(`Car with id '${id}' not found`);
     this.cars.splice(index, 1);
     return { message: `Car with id '${id}' was deleted` };
+  }
+
+  fillCarsWithSeedData(cars: Car[]) {
+    this.cars = cars;
   }
 }
